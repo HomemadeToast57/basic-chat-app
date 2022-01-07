@@ -4,9 +4,11 @@ const B = (props) => (
   <div style={{ fontWeight: "bold" }}>{props.children}</div>
 );
 
+
 const ChatMessage = ({ auth, message}) => {
 
   const { text, uid, photoURL, displayName } = message;
+  
   const messageClass = uid === auth.currentUser.uid ? "sent" : "received";
   
   const timeString = message.date.toDate().toLocaleTimeString();
